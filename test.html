@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<title>Testing eyesee</title>
+</head>
+<body>
+	<h1>TESTING!</h1>
+	<br>
+	<input type="file" name="file-file" id="img-file">
+	<br>
+	<button onclick="prepareImg()">Submit Img</button>
+	<img src="" id="showImg">
+</body>
+<script type="text/javascript">
+
+	function prepareImg(){
+		inputImage = document.getElementById('img-file');
+		
+
+		
+
+    var filesSelected = document.getElementById("img-file").files;
+		if (filesSelected.length > 0){
+    var fileToLoad = filesSelected[0];
+
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) {
+        var srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+        var divTest = document.getElementById("showImg");
+        localStorage.setItem("imgData", srcData);
+        // divTest.innerHTML = newImage.outerHTML;
+
+        displayImg();
+    }
+
+    fileReader.readAsDataURL(fileToLoad);
+    }
+	}
+
+	function displayImg(){
+		var dataImage = localStorage.getItem('imgData');
+		var display = document.getElementById('showImg');
+		display.src = dataImage;
+		// console.log(dataImage.replace(/^data:image\/(png|jpg);base64,/, "").toString());
+		sendRequestToVision(dataImage.replace(/^data:image\/(png|jpg);base64,/, "").toString())
+	}
+
+	function sendRequestToVision(img64){
+		var request = {
+			"requests": [
+				{
+					"image":{
+        		"content": `${img64}`
+      		},
+					"features": [
+						{
+							"type": "TYPE_UNSPECIFIED",
+							"maxResults": 1
+						},
+						{
+							"type": "LABEL_DETECTION",
+							"maxResults": 1
+						},
+						{
+							"type": "TEXT_DETECTION",
+							"maxResults": 1
+						},
+						{
+							"type": "IMAGE_PROPERTIES",
+							"maxResults": 1
+						}
+					]
+				}
+			]
+		};
+
+		var api_url = 'https://vision.googleapis.com/v1/images:annotate?key='
+  	var key = 'ASK FOR THE KEY!'
+  	console.log(`${api_url}${key}`)
+		$.ajax({
+				type: "POST",
+        url: `${api_url}${key}`,
+        contentType: 'text/plain',
+        data: JSON.stringify(request),
+        success: function (reponse) {
+            console.log(reponse.responses[0].fullTextAnnotation.text);
+        },
+        error: function (data, textStatus, errorThrown) {
+	         console.log('error: ' + errorThrown);
+	     }
+    });  
+  }	
+</script>
+</html>
