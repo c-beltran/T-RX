@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<title>Translate</title>
+</head>
+<body>
+<h1>Translate test... </h1>
+<br>
+<input type="text" name="translate-text" id="demo-text">
+<button onclick="sendRequestToTranslate()">Send</button>
+</body>
+<script type="text/javascript">
+	
+	function sendRequestToTranslate(){
+		var inputText = document.getElementById("demo-text").value;
+		
+		var request = {
+			"q": inputText,
+		  "source": "en",
+		  "target": "es",
+		  "format": "text"
+		};
+
+		var api_url = 'https://translation.googleapis.com/language/translate/v2?key='
+  	var key = 'ASK FOR THE KEY!'
+		$.ajax({
+				type: "POST",
+        url: `${api_url}${key}`,
+        contentType: 'text/plain',
+        data: JSON.stringify(request),
+        success: function (reponse) {
+            console.log(reponse);
+        },
+        error: function (data, textStatus, errorThrown) {
+	         console.log('error: ' + errorThrown);
+	     }
+    });  
+	}
+</script>
+</html>
