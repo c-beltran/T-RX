@@ -60,7 +60,7 @@ function sendRequestToVision(img64){
 	};
 
 	var api_url = 'https://vision.googleapis.com/v1/images:annotate?key='
-	var key = 'AIzaSyCQ83WyhlzEf0O1bziqzRV61fn2DKozbVY'
+	var key = 'ASK FOR KEY!'
 	$.ajax({
 		type: "POST",
 		url: `${api_url}${key}`,
@@ -80,29 +80,48 @@ function sendRequestToVision(img64){
 //the logic below is to send images to google translate
 
 function sendRequestToTranslate(){
-		var inputText = document.getElementById("vision-text").value;
-		var showTranslatedText = document.getElementById("translated-text");
+	var inputText = document.getElementById("vision-text").value;
+	var showTranslatedText = document.getElementById("translated-text");
 
-		var request = {
-			"q": inputText,
-		  "source": "en",
-		  "target": "es",
-		  "format": "text"
-		};
+	var request = {
+		"q": inputText,
+		"source": "en",
+		"target": "es",
+		"format": "text"
+	};
 
-		var api_url = 'https://translation.googleapis.com/language/translate/v2?key='
-  	var key = 'AIzaSyB7kj2whOaO6ykBKEZBLV_IlHOGOsEsbns'
-		$.ajax({
-				type: "POST",
-        url: `${api_url}${key}`,
-        contentType: 'text/plain',
-        data: JSON.stringify(request),
-        success: function (response) {
-            // console.log(response.data.translations[0].translatedText);
-            showTranslatedText.innerHTML = response.data.translations[0].translatedText;
-        },
-        error: function (data, textStatus, errorThrown) {
-	         console.log('error: ' + errorThrown);
-	     }
-    });  
-	}
+	var api_url = 'https://translation.googleapis.com/language/translate/v2?key='
+	var key = 'ASK FOR KEY!'
+	$.ajax({
+		type: "POST",
+		url: `${api_url}${key}`,
+		contentType: 'text/plain',
+		data: JSON.stringify(request),
+		success: function (response) {
+      // console.log(response.data.translations[0].translatedText);
+      showTranslatedText.innerHTML = response.data.translations[0].translatedText;
+    },
+    error: function (data, textStatus, errorThrown) {
+    	console.log('error: ' + errorThrown);
+    }
+  });  
+}
+
+function sendRequestToRxInfo(){
+	var pillNumber = document.getElementById("pill-num").value;
+	// var showTranslatedText = document.getElementById("translated-text");
+
+	var api_url = 'https://rximage.nlm.nih.gov/api/rximage/1/rxnav?imprint='
+	$.ajax({
+		type: "GET",
+		url: `${api_url}${pillNumber}`,
+		contentType: 'text/plain',
+		// data: JSON.stringify(request),
+		success: function (response) {
+      console.log(response);
+    },
+    error: function (data, textStatus, errorThrown) {
+    	console.log('error: ' + errorThrown);
+    }
+  });  
+}
