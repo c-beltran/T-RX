@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- adquiring bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- external style sheet -->
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<!-- adquiring jQuery -->
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <!-- external JS file -->
+	<script type="text/javascript" src="js/logicQuery.js"></script>
+	<title></title>
+</head>
+<body>
+	<section>
+		<h1>This sections is for intro and info for the app</h1>
+	</section>
+	<section>
+		<p>this is where the picture upload and translation will take place</p>
+		<div>
+			<div>
+				<input type="file" name="file-file" id="img-file">
+				<br>
+				<button onclick="prepareImg()">Submit Img</button>
+				<img src="" id="showImg">
+			</div>
+			<div>
+				<div>
+					<textarea name="text-to-translate" id="vision-text" placeholder="Enter text to translate"></textarea>
+					<select>
+						<option value="spanish">spanish</option>
+					  <option value="italian">italian</option>
+					  <option value="german">german</option>
+					  <option value="chinese">chinese</option>
+					</select>
+					<button onclick="sendRequestToTranslate()">Translate text</button>
+				</div>
+			</div>
+			<div>
+				<div>
+					<h3>Translation result:</h3>
+					<div>
+						<p id="translated-text"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
