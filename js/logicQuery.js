@@ -77,7 +77,7 @@ function sendRequestToVision(img64){
 	});  
 }
 
-//the logic below is to send images to google translate
+//the logic below is to send text to google translate
 
 function sendRequestToTranslate(){
 	var inputText = document.getElementById("vision-text").value;
