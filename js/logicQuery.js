@@ -60,7 +60,7 @@ function sendRequestToVision(img64){
 	};
 
 	var api_url = 'https://vision.googleapis.com/v1/images:annotate?key='
-	var key = 'ASK FOR KEY!'
+	var key = 'AIzaSyCQ83WyhlzEf0O1bziqzRV61fn2DKozbVY'
 	$.ajax({
 		type: "POST",
 		url: `${api_url}${key}`,
@@ -91,7 +91,7 @@ function sendRequestToTranslate(){
 	};
 
 	var api_url = 'https://translation.googleapis.com/language/translate/v2?key='
-	var key = 'ASK FOR KEY!'
+	var key = 'AIzaSyB7kj2whOaO6ykBKEZBLV_IlHOGOsEsbns'
 	$.ajax({
 		type: "POST",
 		url: `${api_url}${key}`,
@@ -107,6 +107,7 @@ function sendRequestToTranslate(){
   });  
 }
 
+//the logic below is to send pill numbers to the API and receibe the info
 function sendRequestToRxInfo(){
 	var pillNumber = document.getElementById("pill-num").value;
 	// var showTranslatedText = document.getElementById("translated-text");
