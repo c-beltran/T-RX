@@ -10,13 +10,36 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <!-- external JS file -->
 	<script type="text/javascript" src="js/logicQuery.js"></script>
 	<title></title>
 </head>
 <body>
-	<section>
-		<h1>This sections is for intro and info for the app</h1>
+	<section id="section1">
+		<div class="container">
+			<div class="row">
+				<div class="col-md">
+					<div style="text-align: center;">
+						<img src="public/logo.png">
+						<span id="section1-title">Has you covered</span>
+					</div>
+					<h1 id="section1-motto">Assisting the community to live a better life.</h1>
+				</div>
+			</div>
+			<div class="row section1-images">
+				<div class="col-md" style="text-align: center;"> 
+					<a href="#"><img class="section1-img-size" src="public/img_to_txt.png"></a>
+				</div>
+				<div class="col-md" style="text-align: center;"> 
+					<a href="#"><img class="section1-img-size" src="public/find_pills.png"></a>
+				</div>
+				<div class="col-md" style="text-align: center;"> 
+					<a href="#"><img id="reminders-img" src="public/reminders.png"></a>
+				</div>
+			</div>
+		</div>
 	</section>
 	<section>
 		<p>this is where the picture upload and translation will take place</p>
