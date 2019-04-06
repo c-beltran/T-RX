@@ -36,19 +36,31 @@
 					<a href="#"><img class="section1-img-size" src="public/find_pills.png"></a>
 				</div>
 				<div class="col-md" style="text-align: center;"> 
-					<a href="#"><img id="reminders-img" src="public/reminders.png"></a>
+					<a href="#"><img id="section1-reminders-img" src="public/reminders.png"></a>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section>
-		<p>this is where the picture upload and translation will take place</p>
-		<div>
-			<div>
-				<input type="file" name="file-file" id="img-file">
-				<br>
-				<button onclick="prepareImg()">Submit Img</button>
-				<img src="" id="showImg">
+	<section id="section2">
+		<div class="container">
+			<h3 class="text-center font-weight-light">Upload an image of your prescription to get the text</h3>
+			<h3 class="text-center font-weight-light">and then translate to your preferred language.</h3>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<span>Step 1</span>
+					<input type="file" name="file-file" id="img-file">
+					<br>
+					<div>
+						<span>Step 2</span>
+						<button onclick="prepareImg()">Get text form image</button>
+					</div>
+				</div>
+				<div class="col">
+					<img src="public/missing_picture.png" id="missing-picture">
+					<img src="" id="showImg" style="display: none">
+				</div>
 			</div>
 			<div>
 				<div>

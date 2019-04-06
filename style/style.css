@@ -28,7 +28,25 @@
 	padding-top: 3rem;
 }
 
-#reminders-img{
+#section1-reminders-img{
 	width: 170px;
 	height: 150px;
+}
+
+/*section 2*/
+
+#img-file{
+	color: #FC5F2A;
+}
+
+#missing-picture{
+	display: block;
+	width: 200px;
+	height: 85px;
+}
+
+#showImg{
+	width: 480px;
+	height: 480px;
+	text-align: right;
 }

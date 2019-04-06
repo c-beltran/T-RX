@@ -9,11 +9,7 @@ function prepareImg(){
 		var fileReader = new FileReader();
 		fileReader.onload = function(fileLoadedEvent) {
       var srcData = fileLoadedEvent.target.result; // <--- data: base64
-
-      var divTest = document.getElementById("showImg");
       localStorage.setItem("imgData", srcData);
-      // divTest.innerHTML = newImage.outerHTML;
-
       displayImg();
     }
 
@@ -23,8 +19,17 @@ function prepareImg(){
 
 function displayImg(){
 	var dataImage = localStorage.getItem('imgData');
-	var display = document.getElementById('showImg');
-	display.src = dataImage;
+	var showImg = document.getElementById('showImg');
+	var missingPic = document.getElementById('missing-picture');
+	showImg.src = dataImage;
+
+	if(showImg.style.display == "none"){
+		showImg.style.display = "block";
+		missingPic.style.display = "none"
+	}
+	else{
+		showImg.style.display = "none"
+	}
 	// console.log(dataImage.replace(/^data:image\/(png|jpg);base64,/, "").toString());
 	sendRequestToVision(dataImage.replace(/^data:image\/(png|jpg);base64,/, "").toString())
 }
