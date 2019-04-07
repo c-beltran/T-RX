@@ -167,9 +167,8 @@
 					</div>
 				</div>
 				<div class="col">
-
 					<div id="translated-text-border" style="padding-top: 1rem;">
-						<span>Translated Result:</span>
+						<span><strong>Translated Result:</strong></span>
 						<p id="translated-text" style="width: 80%;"></p>
 					</div>
 				</div>
@@ -177,11 +176,21 @@
 		</div>
 	</section>
 	<section id="section3">
-		<div>
-			<div>
-				<h3>This section is for users to find out more about what they are taking</h3>
-				<input type="text" name="pill-id" id="pill-num">
-				<button onclick="sendRequestToRxInfo()">Submit request</button>
+		<div class="container">
+			<h3 class="text-center font-weight-light">Search information of the medication you are taking</h3>
+			<h3 class="text-center font-weight-light">by searching by your pill number or name.</h3>
+		</div>
+		<div class="container" style="padding-top: 2rem;">
+			<div class="row">
+				<div class="col" style="text-align: center;">
+					<input class="form-control form-input-rsq" type="number" name="pill-id" id="pill-num" placeholder="Search by pill imprint number">
+					<span style="font-size: 2rem;">OR</span>
+					<input class="form-control form-input-rsq" type="text" name="pill-id" id="drug-name" placeholder="Search by drug name">
+					<button class="btn pill-info-btn" onclick="sendRequestToRxInfo()">Submit request</button>
+				</div>
+				<div class="container">
+					<div id="info-result"></div>
+				</div>
 			</div>
 		</div>
 	</section>

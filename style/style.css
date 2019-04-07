@@ -73,6 +73,41 @@
 	background-color: #FC5F2A;
 }
 
+/*section3*/
+
+#section3{
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.form-input-rsq{
+	width: 330px; 
+	display: inline;
+	border-color: #20D2BA;
+}
+
+.pill-info-btn{
+	color: #ffffff;
+	background-color: #20D2BA;
+	margin-left: 10px;
+}
+
+.info-box{
+	margin-top: 2rem;
+  border-radius: 5px;
+  border-color: #20D2BA;
+  border-width: 2px;
+  border-style: solid;
+  position: relative;
+  background-color: #ffffff;
+}
+
+#pill-img{
+	width: 200px;
+	height: 200px;
+}
+
+/*section4*/
 
 #section4{
 	padding-top: 4rem;
