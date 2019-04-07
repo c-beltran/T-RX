@@ -86,12 +86,13 @@ function sendRequestToVision(img64){
 
 function sendRequestToTranslate(){
 	var inputText = document.getElementById("vision-text").value;
+	var target_language = document.getElementById("language-select").value;
 	var showTranslatedText = document.getElementById("translated-text");
 
 	var request = {
 		"q": inputText,
 		"source": "en",
-		"target": "es",
+		"target": target_language,
 		"format": "text"
 	};
 
