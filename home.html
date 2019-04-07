@@ -52,14 +52,14 @@
 			<h3 class="text-center font-weight-light">and then translate to your preferred language.</h3>
 		</div>
 		<div class="container">
-			<div class="row">
+			<div class="row" style="padding-top: 3rem;">
 				<div class="col">
-					<span>Step 1</span>
+					<span class="section2-steps">Step 1</span>
 					<input type="file" name="file-file" id="img-file">
 					<br>
-					<div>
-						<span>Step 2</span>
-						<button onclick="prepareImg()">Get text form image</button>
+					<div style="padding-top: 2rem;">
+						<span class="section2-steps">Step 2</span>
+						<button class="btn btn-translate" onclick="prepareImg()">Get text form image</button>
 					</div>
 				</div>
 				<div class="col">
@@ -67,29 +67,32 @@
 					<img src="" id="showImg" style="display: none">
 				</div>
 			</div>
-			<div>
-				<div>
-					<textarea name="text-to-translate" id="vision-text" placeholder="Enter text to translate"></textarea>
-					<select>
-						<option value="spanish">spanish</option>
-					  <option value="italian">italian</option>
-					  <option value="german">german</option>
-					  <option value="chinese">chinese</option>
-					</select>
-					<button onclick="sendRequestToTranslate()">Translate text</button>
+			<div class="row">
+				<div class="col" style="padding-top: 2.5rem;">
+					<textarea name="text-to-translate" id="vision-text" placeholder="Enter text to translate" style="width: 80%;"></textarea>
+					<br>
+					<div style="padding-top: 1rem;">
+						<span class="section2-steps">Step 3</span>
+						<select class="btn" style="border: 1px solid #FC5F2A">
+							<option value="spanish">spanish</option>
+						  <option value="italian">italian</option>
+						  <option value="german">german</option>
+						  <option value="chinese">chinese</option>
+						</select>
+						<button class="btn btn-translate" onclick="sendRequestToTranslate()" style="margin-left: 20px;">Translate text</button>
+					</div>
 				</div>
-			</div>
-			<div>
-				<div>
-					<h3>Translation result:</h3>
-					<div>
-						<p id="translated-text"></p>
+				<div class="col">
+
+					<div id="translated-text-border" style="padding-top: 1rem;">
+						<span>Translated Result:</span>
+						<p id="translated-text" style="width: 80%;"></p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section>
+	<section id="section3">
 		<div>
 			<div>
 				<h3>This section is for users to find out more about what they are taking</h3>
@@ -98,97 +101,95 @@
 			</div>
 		</div>
 	</section>
+	<section id="section4">
+		<div class="schedule">
+		 <div class="step1 show">
+		 	 <div class="pick-wrapper-field">
+		      <i class="fa fa-prescription-bottle-alt" aria-hidden="true"></i>
+		      <input type="text"  class="title" placeholder="Enter your title" />
+		    </div>
 
-	<div class="schedule">
+		    <div class="pick-wrapper-field">
+		      <i class="fa fa-tablets" aria-hidden="true"></i>
+		      <input type="number"  class="tabletpicker" placeholder="Tablet Daily limit" />
+		     
+		    </div>
 
-	 <div class="step1 show">
-	 	 <div class="pick-wrapper-field">
-	      <i class="fa fa-prescription-bottle-alt" aria-hidden="true"></i>
-	      <input type="text"  class="title" placeholder="Enter your title" />
-	     
-	    </div>
+		    <div class="pick-wrapper-field">
+		      <i class="fa fa-prescription-bottle" aria-hidden="true"></i>
+		      <input type="number"  class="quantity" placeholder="Quantity" />
+		     
+		    </div>
 
-	    <div class="pick-wrapper-field">
-	      <i class="fa fa-tablets" aria-hidden="true"></i>
-	      <input type="number"  class="tabletpicker" placeholder="Tablet Daily limit" />
-	     
-	    </div>
+		    <div class="pick-wrapper-field">
+		      <i class="fa fa-calendar" aria-hidden="true"></i>
+		      <input type="text" class="datepicker" placeholder="Choose your date"  />
+		      <i class="fa fa-chevron-down"></i>
+		    </div>
+		  
+		    <div class="pick-wrapper-field">
+		      <i class="fa fa-clock"></i>
+		      <input type="text" class="timepicker" placeholder="Select from available times" />
+		      <i class="fa fa-chevron-down"></i>
+		    </div>
+		     
+		  <a href="#" class="load">LOAD</a>
+		  <a href="#" class="submit">SUBMIT</a>
+		  
+		</div><!-- End Step 1-->
+		<div class="step2 hide">
+		  <div class="subtitle">Add this event to your calendar:</div>
+		  <div class="addtoCalendar-buttons">
+		    <div class="addToCalendar-button iconButton block-inline" 
+		         data-cal-user="" 
+		         data-cal-type="google" 
+		         data-cal-timezone="" 
+		         data-cal-start="" 
+		         data-cal-end="" 
+		         data-cal-title="" 
+		         data-cal-description="Add your medicine to calender to get remiders effortlessly" 
+		         data-cal-location="https://t-rx.herokuapp.com/" 
+		         data-cal-organizer="Self" 
+		         data-cal-organizer_email="t-rx@mailinator.com">
+		      Google
+		    </div>
 
-	    <div class="pick-wrapper-field">
-	      <i class="fa fa-prescription-bottle" aria-hidden="true"></i>
-	      <input type="number"  class="quantity" placeholder="Quantity" />
-	     
-	    </div>
+		    <div class="addToCalendar-button iconButton block-inline" 
+		         data-cal-user="" 
+		         data-cal-type="ics" 
+		         data-cal-timezone="" 
+		         data-cal-start="" 
+		         data-cal-end="" 
+		         data-cal-title="" 
+		         data-cal-description="Add your medicine to calender to get remiders effortlessly" 
+		         data-cal-location="https://t-rx.herokuapp.com/" 
+		         data-cal-organizer="Self" 
+		         data-cal-organizer_email="t-rx@mailinator.com">
+		      iCal
+		    </div>
 
-	    <div class="pick-wrapper-field">
-	      <i class="fa fa-calendar" aria-hidden="true"></i>
-	      <input type="text" class="datepicker" placeholder="Choose your date"  />
-	      <i class="fa fa-chevron-down"></i>
-	    </div>
-	  
-	    <div class="pick-wrapper-field">
-	      <i class="fa fa-clock"></i>
-	      <input type="text" class="timepicker" placeholder="Select from available times" />
-	      <i class="fa fa-chevron-down"></i>
-	    </div>
-	     
-	  <a href="#" class="load">LOAD</a>
-	  <a href="#" class="submit">SUBMIT</a>
-	  
-	</div><!-- End Step 1-->
-	<div class="step2 hide">
-	  <div class="subtitle">Add this event to your calendar:</div>
-	  <div class="addtoCalendar-buttons">
-	    <div class="addToCalendar-button iconButton block-inline" 
-	         data-cal-user="" 
-	         data-cal-type="google" 
-	         data-cal-timezone="" 
-	         data-cal-start="" 
-	         data-cal-end="" 
-	         data-cal-title="" 
-	         data-cal-description="Add your medicine to calender to get remiders effortlessly" 
-	         data-cal-location="https://t-rx.herokuapp.com/" 
-	         data-cal-organizer="Self" 
-	         data-cal-organizer_email="t-rx@mailinator.com">
-	      Google
-	    </div>
-
-	    <div class="addToCalendar-button iconButton block-inline" 
-	         data-cal-user="" 
-	         data-cal-type="ics" 
-	         data-cal-timezone="" 
-	         data-cal-start="" 
-	         data-cal-end="" 
-	         data-cal-title="" 
-	         data-cal-description="Add your medicine to calender to get remiders effortlessly" 
-	         data-cal-location="https://t-rx.herokuapp.com/" 
-	         data-cal-organizer="Self" 
-	         data-cal-organizer_email="t-rx@mailinator.com">
-	      iCal
-	    </div>
-
-	    <div class="addToCalendar-button iconButton block-inline" 
-	         data-cal-user="" 
-	         data-cal-type="ics" 
-	         data-cal-timezone="" 
-	         data-cal-start="" 
-	         data-cal-end="" 
-	         data-cal-title="" 
-	         data-cal-description="Add your medicine to calender to get remiders effortlessly" 
-	         data-cal-location="https://t-rx.herokuapp.com/" 
-	         data-cal-organizer="Self" 
-	         data-cal-organizer_email="t-rx@mailinator.com">
-	      Outlook
-	    </div>
-	  </div>
-	  
-	  <div class="fb">
-	    <div class="fb-send-to-messenger test-fb-send-to-messenger" messenger_app_id="1678638095724206" page_id="129519493767565" data-ref="b64:MDAwMG1v" color="blue" size="xlarge"> </div>
-	  </div>
-	  
-	</div> <!-- End Step 2 -->
-	</div>
-
+		    <div class="addToCalendar-button iconButton block-inline" 
+		         data-cal-user="" 
+		         data-cal-type="ics" 
+		         data-cal-timezone="" 
+		         data-cal-start="" 
+		         data-cal-end="" 
+		         data-cal-title="" 
+		         data-cal-description="Add your medicine to calender to get remiders effortlessly" 
+		         data-cal-location="https://t-rx.herokuapp.com/" 
+		         data-cal-organizer="Self" 
+		         data-cal-organizer_email="t-rx@mailinator.com">
+		      Outlook
+		    </div>
+		  </div>
+		  
+		  <div class="fb">
+		    <div class="fb-send-to-messenger test-fb-send-to-messenger" messenger_app_id="1678638095724206" page_id="129519493767565" data-ref="b64:MDAwMG1v" color="blue" size="xlarge"> </div>
+		  </div>
+		  
+		</div> <!-- End Step 2 -->
+		</div>
+	</section>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data.js"></script>

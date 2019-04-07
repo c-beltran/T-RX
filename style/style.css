@@ -34,6 +34,11 @@
 }
 
 /*section 2*/
+#section2{
+	background-color: #E2ECFF;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
 
 #img-file{
 	color: #FC5F2A;
@@ -41,12 +46,36 @@
 
 #missing-picture{
 	display: block;
-	width: 200px;
-	height: 85px;
+	width: 300px;
+	height: 120px;
+	margin-left: 4rem;
 }
 
 #showImg{
 	width: 480px;
 	height: 480px;
 	text-align: right;
+}
+
+#translated-text-border p{
+	border:  2px solid #FC5F2A;
+	width: 80%;
+	padding: 20px;
+}
+
+.section2-steps{
+	font-size: 1.5rem;
+	padding-right: 10px;
+}
+
+.btn-translate{
+	color: #ffffff;
+	background-color: #FC5F2A;
+}
+
+
+#section4{
+	padding-top: 4rem;
+	background-color: #eee;
+	padding-bottom: 4rem;
 }
