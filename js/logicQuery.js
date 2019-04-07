@@ -65,7 +65,7 @@ function sendRequestToVision(img64){
 	};
 
 	var api_url = 'https://vision.googleapis.com/v1/images:annotate?key='
-	var key = 'AIzaSyCQ83WyhlzEf0O1bziqzRV61fn2DKozbVY'
+	var key = 'Ask for key!'
 	$.ajax({
 		type: "POST",
 		url: `${api_url}${key}`,
@@ -98,7 +98,7 @@ function sendRequestToTranslate(){
 
 	if(inputText != ""){
 		var api_url = 'https://translation.googleapis.com/language/translate/v2?key='
-		var key = 'AIzaSyB7kj2whOaO6ykBKEZBLV_IlHOGOsEsbns'
+		var key = 'Ask for key!'
 		$.ajax({
 			type: "POST",
 			url: `${api_url}${key}`,
