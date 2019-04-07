@@ -175,60 +175,36 @@
 			</div>
 		</div>
 	</section>
-	<section id="section3">
-		<div class="container">
-			<h3 class="text-center font-weight-light">Search information of the medication you are taking</h3>
-			<h3 class="text-center font-weight-light">by searching by your pill number or name.</h3>
-		</div>
-		<div class="container" style="padding-top: 2rem;">
-			<div class="row">
-				<div class="col" style="text-align: center;">
-					<input class="form-control form-input-rsq" type="number" name="pill-id" id="pill-num" placeholder="Search by pill imprint number">
-					<span style="font-size: 2rem;">OR</span>
-					<input class="form-control form-input-rsq" type="text" name="pill-id" id="drug-name" placeholder="Search by drug name">
-					<button class="btn pill-info-btn" onclick="sendRequestToRxInfo()">Submit request</button>
-				</div>
-				<div class="container">
-					<div id="info-result"></div>
-				</div>
-			</div>
-		</div>
-	</section>
 	<section id="section4">
+		<div class="container">
+			<h3 class="text-center font-weight-light">Set up reminders! to get alerts when to take your medication.</h3>
+		</div>
 		<div class="schedule">
 		 <div class="step1 show">
 		 	 <div class="pick-wrapper-field">
 		      <i class="fa fa-prescription-bottle-alt" aria-hidden="true"></i>
 		      <input type="text"  class="title" placeholder="Enter your title" />
 		    </div>
-
 		    <div class="pick-wrapper-field">
 		      <i class="fa fa-tablets" aria-hidden="true"></i>
-		      <input type="number"  class="tabletpicker" placeholder="Tablet Daily limit" />
-		     
+		      <input type="number"  class="tabletpicker" placeholder="Tablet Daily limit" />     
 		    </div>
-
 		    <div class="pick-wrapper-field">
 		      <i class="fa fa-prescription-bottle" aria-hidden="true"></i>
 		      <input type="number"  class="quantity" placeholder="Quantity" />
-		     
 		    </div>
-
 		    <div class="pick-wrapper-field">
 		      <i class="fa fa-calendar" aria-hidden="true"></i>
 		      <input type="text" class="datepicker" placeholder="Choose your date"  />
 		      <i class="fa fa-chevron-down"></i>
 		    </div>
-		  
 		    <div class="pick-wrapper-field">
 		      <i class="fa fa-clock"></i>
 		      <input type="text" class="timepicker" placeholder="Select from available times" />
 		      <i class="fa fa-chevron-down"></i>
 		    </div>
-		     
 		  <a href="#" class="load">LOAD</a>
 		  <a href="#" class="submit">SUBMIT</a>
-		  
 		</div><!-- End Step 1-->
 		<div class="step2 hide">
 		  <div class="subtitle">Add this event to your calendar:</div>
@@ -246,7 +222,6 @@
 		         data-cal-organizer_email="t-rx@mailinator.com">
 		      Google
 		    </div>
-
 		    <div class="addToCalendar-button iconButton block-inline" 
 		         data-cal-user="" 
 		         data-cal-type="ics" 
@@ -260,7 +235,6 @@
 		         data-cal-organizer_email="t-rx@mailinator.com">
 		      iCal
 		    </div>
-
 		    <div class="addToCalendar-button iconButton block-inline" 
 		         data-cal-user="" 
 		         data-cal-type="ics" 
@@ -275,12 +249,29 @@
 		      Outlook
 		    </div>
 		  </div>
-		  
 		  <div class="fb">
 		    <div class="fb-send-to-messenger test-fb-send-to-messenger" messenger_app_id="1678638095724206" page_id="129519493767565" data-ref="b64:MDAwMG1v" color="blue" size="xlarge"> </div>
-		  </div>
-		  
+		  </div>	  
 		</div> <!-- End Step 2 -->
+		</div>
+	</section>
+	<section id="section3">
+		<div class="container">
+			<h3 class="text-center font-weight-light">Search information of the medication you are taking</h3>
+			<h3 class="text-center font-weight-light">by searching by your pill number or name.</h3>
+		</div>
+		<div class="container" style="padding-top: 2rem;">
+			<div class="row">
+				<div class="col" style="text-align: center;">
+					<input class="form-control form-input-rsq" type="number" name="pill-id" id="pill-num" placeholder="Search by pill imprint number">
+					<span style="font-size: 2rem;">OR</span>
+					<input class="form-control form-input-rsq" type="text" name="pill-id" id="drug-name" placeholder="Search by drug name">
+					<button class="btn pill-info-btn" onclick="sendRequestToRxInfo()">Submit request</button>
+				</div>
+				<div class="container">
+					<div id="info-result"></div>
+				</div>
+			</div>
 		</div>
 	</section>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
